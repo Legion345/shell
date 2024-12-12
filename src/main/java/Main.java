@@ -22,13 +22,13 @@ public class Main {
                 String arguments = input.substring(5);
                 arguments = arguments.trim();
                 if (arguments.isEmpty()) {
-                    System.out.println("No command provided");
+                    System.out.println(": not found");
                     return;
                 }
                 String builtInCommands = input.substring(5);
                 if (builtInCommands.contains(arguments)) {
                     System.out.println(arguments + " is a shell builtin");
-                    continue;
+                    return;
                 }
             }
 
