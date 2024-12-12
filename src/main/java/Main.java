@@ -7,6 +7,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
+        if (input.startsWith("exit")) {
+            int code = Integer.valueOf(input.substring(4).trim());
+            System.exit(code);
+
+        }
         do {
 
             System.out.println(input + ": command not found");
