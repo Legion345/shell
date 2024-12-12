@@ -27,7 +27,7 @@ public class Main {
                 }
                 String builtInCommands = input.substring(5);
                 if (builtInCommands.contains(arguments)) {
-                    System.out.println(arguments + " is a shell builtin.");
+                    System.out.println(arguments + " is a shell builtin");
                     return;
                 }
             }
