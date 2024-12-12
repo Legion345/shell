@@ -18,6 +18,19 @@ public class Main {
                 System.out.println(arguments);
                 continue;
             }
+            if (input.startsWith("type")) {
+                String arguments = input.substring(5);
+                arguments = arguments.trim();
+                if (arguments.isEmpty()) {
+                    System.out.println("No command provided");
+                    return;
+                }
+                String builtInCommands = input.substring(5);
+                if (builtInCommands.contains(arguments)) {
+                    System.out.println(arguments + " is a shell builtin.");
+                    return;
+                }
+            }
 
             System.out.println(input + ": command not found");
         }
