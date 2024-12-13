@@ -31,6 +31,7 @@ public class Main {
                     return;
                 }
             }
+            System.out.print("$ ");
 
             System.out.println(input + ": command not found");
         }
