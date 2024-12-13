@@ -25,7 +25,7 @@ public class Main {
             if (input.startsWith("type")) {
                 arguments = arguments.trim();
                 if (arguments.isEmpty()) {
-                    System.out.println(": not found");
+                    System.out.println(arguments + ": not found");
                     continue;
                 } else {
                     System.out.println(input + ": command not found");
