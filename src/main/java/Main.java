@@ -28,9 +28,9 @@ public class Main {
             if (builtInCommands.contains(arguments)) {
                 System.out.println(arguments + " is a shell builtin");
                 return;
+            } else {
+                System.out.println(input + ": command not found");
             }
-
-            System.out.println(input + ": command not found");
         }
     }
 }
