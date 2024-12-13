@@ -23,7 +23,6 @@ public class Main {
                     System.out.println(arguments + " is a shell builtin");
                     continue;
                 } else if (arguments.isEmpty()) {
-                    arguments = arguments.trim();
                     System.out.println(arguments + ": not found");
                     continue;
                 } else {
