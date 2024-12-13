@@ -6,32 +6,29 @@ public class Main {
 
         while (true) {
             System.out.print("$ ");
-
             String input = scanner.nextLine();
+            String arguments = input.substring(5);
+            String builtInCommands = input.substring(5);
 
             // exit command
             if (input.equals("exit 0"))
                 break;
             // echo command
             if (input.startsWith("echo")) {
-                String arguments = input.substring(5);
                 System.out.println(arguments);
                 continue;
             }
             if (input.startsWith("type")) {
-                String arguments = input.substring(5);
                 arguments = arguments.trim();
                 if (arguments.isEmpty()) {
                     System.out.println(": not found");
                     return;
                 }
-                String builtInCommands = input.substring(5);
-                if (builtInCommands.contains(arguments)) {
-                    System.out.println(arguments + " is a shell builtin");
-                    return;
-                }
             }
-            System.out.print("$ ");
+            if (builtInCommands.contains(arguments)) {
+                System.out.println(arguments + " is a shell builtin");
+                return;
+            }
 
             System.out.println(input + ": command not found");
         }
