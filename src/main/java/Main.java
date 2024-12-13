@@ -23,8 +23,11 @@ public class Main {
                 continue;
             }
             if (input.startsWith("type")) {
-                arguments = arguments.trim();
-                if (arguments.isEmpty()) {
+                if (builtInCommands.contains(arguments)) {
+                    System.out.println(arguments + " is a shell builtin");
+                    continue;
+                } else if (arguments.isEmpty()) {
+                    arguments = arguments.trim();
                     System.out.println(arguments + ": not found");
                     continue;
                 } else {
