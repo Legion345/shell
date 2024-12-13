@@ -48,7 +48,7 @@ public class Main {
                     for (String dir : directories) {
                         File file = new File(dir, arguments);
                         if (file.exists() && file.isFile() && file.canExecute()) {
-                            System.out.println(arguments + " is" + file.getAbsolutePath());
+                            System.out.println(arguments + " is " + file.getAbsolutePath());
                             found = true;
                             break;
                         }
