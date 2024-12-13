@@ -18,10 +18,6 @@ public class Main {
                 System.out.println(arguments);
                 continue;
             }
-            if (builtInCommands.contains(arguments)) {
-                System.out.println(arguments + " is a shell builtin");
-                continue;
-            }
             if (input.startsWith("type")) {
                 if (builtInCommands.contains(arguments)) {
                     System.out.println(arguments + " is a shell builtin");
