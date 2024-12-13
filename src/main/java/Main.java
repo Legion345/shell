@@ -28,8 +28,14 @@ public class Main {
             if (builtInCommands.contains(arguments)) {
                 System.out.println(arguments + " is a shell builtin");
                 continue;
-            } else {
-                System.out.println(input + ": command not found");
+            } else if (input.startsWith("type")) {
+                arguments = arguments.trim();
+                if (arguments.isEmpty()) {
+                    System.out.println(": not found");
+                    continue;
+                } else {
+                    System.out.println(input + ": command not found");
+                }
             }
         }
     }
