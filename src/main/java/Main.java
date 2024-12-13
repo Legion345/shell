@@ -21,7 +21,8 @@ public class Main {
             if (builtInCommands.contains(arguments)) {
                 System.out.println(arguments + " is a shell builtin");
                 continue;
-            } else if (input.startsWith("type")) {
+            }
+            if (input.startsWith("type")) {
                 arguments = arguments.trim();
                 if (arguments.isEmpty()) {
                     System.out.println(": not found");
