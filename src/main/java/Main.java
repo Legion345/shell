@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -26,7 +27,7 @@ public class Main {
                     continue;
                 }
 
-                String[] builtInCommands = { "echo", "type", "exit" };
+                String[] builtInCommands = { "echo", "type", "exit", "ls" };
                 boolean isBuiltIn = false;
 
                 for (String command : builtInCommands) {
@@ -39,7 +40,22 @@ public class Main {
                 if (isBuiltIn) {
                     System.out.println(arguments + " is a shell builtin");
                 } else {
-                    System.out.println(arguments + ": not found");
+                    // Check for executables in PATH
+                    String path = System.getenv("PATH");
+                    String[] directories = path.split(":");
+                    boolean found = false;
+
+                    for (String dir : directories) {
+                        File file = new File(dir, arguments);
+                        if (file.exists() && file.isFile() && file.canExecute()) {
+                            System.out.println(arguments + "found at: " + file.getAbsolutePath());
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        System.out.println(arguments + ": not found");
+                    }
                 }
                 continue;
             }
