@@ -22,12 +22,12 @@ public class Main {
                 arguments = arguments.trim();
                 if (arguments.isEmpty()) {
                     System.out.println(": not found");
-                    return;
+                    continue;
                 }
             }
             if (builtInCommands.contains(arguments)) {
                 System.out.println(arguments + " is a shell builtin");
-                return;
+                continue;
             } else {
                 System.out.println(input + ": command not found");
             }
